@@ -1,0 +1,7 @@
+<h1>Welcome to DIY Bootcamp</h1>
+<% if !session[:user_id] %>
+ <p><a href="/login">Log In</a> to DIY Bootcamp</p>
+ <p>or <a href="/signup">Sign up</a></p>
+<% else %>
+ <p><a href="/logout">Log Out</a> of DIY Bootcamp?</p>
+<% end %>
