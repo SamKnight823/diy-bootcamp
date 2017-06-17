@@ -1,0 +1,10 @@
+<%= @drill.cardio %>
+ <br><br>
+ <form action="/drills/<%= @drill.id %>/delete" method="post">
+   <input id="hidden" type="hidden" name="_method" value="DELETE">
+   <input type="submit" value="Delete Drill">
+</form>
+<br>
+<form action="/drills/<%= @drill.id %>/edit" method="get">
+  <input type="submit" value="Edit Drill">
+</form>
