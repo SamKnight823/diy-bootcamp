@@ -1,0 +1,6 @@
+<h1>Welcome, <%= current_user.username %></h1>
+ <% Drill.all.each do |drill| %>
+   <h3><a href="drills/<%= drill.id%>"><%= drill.cardio %></a> - <a href="/users/<%= drill.user %>"><%= drill.user.username %></a></h3>
+<% end %>
+<br><br>
+<a href="/drills/new">Create Drill</a>
