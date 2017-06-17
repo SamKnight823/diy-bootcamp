@@ -1,4 +1,6 @@
-configure do
+class ApplicationController < Sinatra::Base
+
+    configure do
      enable :sessions
      set :session_secret, "bootcamp_secret"
      set :public_folder, 'public'
@@ -6,12 +8,12 @@ configure do
     end
 
     get '/' do
-    if logged_in?
-      get '/drills'
-    else
+
+
       erb :index
-    end
+
   end
+
 
   helpers do
 
@@ -22,4 +24,7 @@ configure do
     def current_user
       User.find(session[:user_id])
     end
+
   end
+
+end
