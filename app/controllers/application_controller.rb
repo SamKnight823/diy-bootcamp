@@ -8,11 +8,9 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
-      if logged_in?
-        get '/drills'
-      else
+
         erb :index
-      end
+
     end
 
 
