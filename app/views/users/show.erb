@@ -2,7 +2,6 @@
  <% @user.drills.each do |drill| %>
    <ul>
     <li>Day Number: <a href="/drills/<%=drill.id%>"><%= drill.day %></a></li>
-
    </ul>
 <% end %>
 <p>Log <%= 60 - @user.drills.size %> more days to complete the challenge!</p>
