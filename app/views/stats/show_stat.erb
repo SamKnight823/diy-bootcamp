@@ -1,0 +1,14 @@
+<h2>Gender:<%= @stat.gender %></h2>
+<h3>Age: <%= @stat.age %></h3>
+<h3>Height: <%= @stat.height %></h3>
+<h3>Weight: <%= @stat.weight %></h3>
+
+ <br><br>
+ <form action="/stats/<%= @stat.id %>/delete" method="post">
+   <input id="hidden" type="hidden" name="_method" value="DELETE">
+   <input type="submit" value="Delete Stat">
+</form>
+<br>
+<form action="/stats/<%= @stat.id %>/edit" method="get">
+  <input type="submit" value="Edit Stat">
+</form>
