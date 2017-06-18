@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+
+
    get '/signup' do
     if logged_in?
       redirect '/drills'
@@ -45,5 +47,10 @@ class UsersController < ApplicationController
     else
       redirect '/login'
     end
+  end
+
+  get '/users/' do
+    @user=current_user
+      erb :'users/show'
   end
 end

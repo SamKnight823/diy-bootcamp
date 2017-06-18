@@ -25,6 +25,29 @@ class DrillsController < ApplicationController
     end
   end
 
+  get '/drills/:id/edit' do
+   if logged_in?
+      @drill = Drill.find(params[:id])
+      if session[:user_id] == @drill.user_id
+        erb :"drills/edit_drill"
+      else
+        redirect '/drills'
+      end
+    else
+      redirect '/login'
+    end
+  end
+
+  patch '/drills/:id' do
+    @drill = Drill.find_by_id(params[:id])
+    if params[:cardio].empty?
+      redirect "/drills/#{@drill.id}/edit"
+    else
+      @drill.update(params.select{|k|k=="cardio" || k=="pushups" || k=="squats" || k=="crunches" ||k=="squatjacks"})
+      redirect "/drills/#{@drill.id}"
+    end
+  end
+
   post '/drills' do
      @user = current_user
     if params[:cardio].empty?
@@ -33,6 +56,16 @@ class DrillsController < ApplicationController
       @drill = @user.drills.build(params)
       @user.save
       redirect "drills/#{@drill.id}"
+    end
+  end
+
+  delete '/drills/:id/delete' do
+    @drill = Drill.find_by_id(params[:id])
+    if session[:user_id] == @drill.user_id
+      @drill.delete
+      redirect '/drills'
+    else
+      redirect "/drills"
     end
   end
 end
