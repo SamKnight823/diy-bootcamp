@@ -1,4 +1,9 @@
-<%= @drill.cardio %>
+<h2>Day Number:<%= @drill.day %></h2>
+<h3>Cardio Minutes: <%= @drill.cardio %></h3>
+<h3>Pushups: <%= @drill.pushups %></h3>
+<h3>Squats: <%= @drill.squats %></h3>
+<h3>Crunches:<%= @drill.crunches %></h3>
+<h3>Squatjacks:<%= @drill.squatjacks %></h3>
  <br><br>
  <form action="/drills/<%= @drill.id %>/delete" method="post">
    <input id="hidden" type="hidden" name="_method" value="DELETE">

@@ -1,17 +1,19 @@
-<h2>Editing Drill</h2>
+<h2>Edit selected Drill</h2>
  <form action="/drills/<%=@drill.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
 
+  <label for="day">Day Number: </label>
+  <input type="number" name="day" id="day"><br>
   <label for="cardio">Cardio Minutes: </label>
-  <input type="number" name="cardio" id="cardio">
+  <input type="number" name="cardio" id="cardio"><br>
   <label for="pushups">Number of Pushups: </label>
-  <input type="number" name="pushups" id="pushups">
+  <input type="number" name="pushups" id="pushups"><br>
   <label for="squats">Number of Squats: </label>
-  <input type="number" name="squats" id="squats">
+  <input type="number" name="squats" id="squats"><br>
   <label for="crunches">Number of Crunches: </label>
-  <input type="number" name="crunches" id="crunches">
+  <input type="number" name="crunches" id="crunches"><br>
   <label for="squatjacks">Number of Squatjacks: </label>
-  <input type="number" name="squatjacks" id="squatjacks">
+  <input type="number" name="squatjacks" id="squatjacks"><br>
 
   <input type="submit" value="submit">
 </form>

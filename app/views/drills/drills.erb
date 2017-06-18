@@ -1,6 +1,6 @@
-<h1>Welcome, <%= current_user.username %></h1>
+<h1>Great job, <%= current_user.username %>! Here are your completed Drills:</h1>
  <% current_user.drills.each do |drill| %>
-   <h3><a href="drills/<%= drill.id%>"><%= drill.cardio %></a> - <a href="/users/<%= drill.user %>"><%= drill.user.username %></a></h3>
+   <h3>Day Number: <%= drill.day %>-<a href="drills/<%= drill.id%>">View/Edit</a> - <a href="/users/<%= drill.user %>"><%= drill.user.username %></a></h3>
 <% end %>
 <br><br>
 <a href="/drills/new">Create Drill</a>

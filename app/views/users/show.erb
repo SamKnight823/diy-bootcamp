@@ -1,10 +1,8 @@
-<p> Here are your completed Drills, <%= @user.username %>
+<p> Way to go, <%= @user.username %>! You've sucessfully logged the following days:</p>
  <% @user.drills.each do |drill| %>
    <ul>
-    <li>Cardio <a href="/drills/<%=drill.id%>"><%= drill.cardio %></a></li>
-    <li>Pushups <a href="/drills/<%=drill.id%>"><%= drill.pushups %></a></li>
-    <li>Squats <a href="/drills/<%=drill.id%>"><%= drill.squats %></a></li>
-    <li>Crunches <a href="/drills/<%=drill.id%>"><%= drill.crunches %></a></li>
-    <li>Squatjacks <a href="/drills/<%=drill.id%>"><%= drill.squatjacks %></a></li>
+    <li>Day Number: <a href="/drills/<%=drill.id%>"><%= drill.day %></a></li>
+
    </ul>
 <% end %>
+<p>Log <%= 60 - @user.drills.size %> more days to complete the challenge!</p>
