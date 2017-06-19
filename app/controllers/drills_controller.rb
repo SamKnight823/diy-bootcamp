@@ -43,7 +43,7 @@ class DrillsController < ApplicationController
     if params[:cardio].empty?
       redirect "/drills/#{@drill.id}/edit"
     else
-      @drill.update(params.select{|k|k=="cardio" || k=="pushups" || k=="squats" || k=="crunches" ||k=="squatjacks"})
+      @drill.update(params.select{|d|d=="cardio" || d=="pushups" || d=="squats" || d=="crunches" || d=="squatjacks"})
       redirect "/drills/#{@drill.id}"
     end
   end

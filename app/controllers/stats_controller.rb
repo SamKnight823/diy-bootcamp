@@ -43,7 +43,7 @@ class StatsController < ApplicationController
     if params[:day].empty?
       redirect "/stats/#{@stat.id}/edit"
     else
-      @stat.update(params.select{|k|k=="day" || k=="age" || k=="weight" || k=="height" || k=="calories"})
+      @stat.update(params.select{|s|s=="day" || s=="age" || s=="weight" || s=="height" || s=="calories"})
       redirect "/stats/#{@stat.id}"
     end
   end

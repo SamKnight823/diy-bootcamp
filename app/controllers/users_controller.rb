@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   get '/signup' do
+  get '/signup' do
     if logged_in?
       redirect '/drills'
     else
@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    # binding.pry
     @user = User.new(params)
     if params[:username].empty? || params[:password].empty?
       redirect '/signup'
