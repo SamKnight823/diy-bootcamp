@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618051536) do
+ActiveRecord::Schema.define(version: 20170618174844) do
 
   create_table "drills", force: :cascade do |t|
     t.integer "cardio"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20170618051536) do
     t.integer "weight"
     t.integer "height"
     t.integer "user_id"
+    t.integer "day"
+    t.integer "calories"
   end
 
   create_table "users", force: :cascade do |t|

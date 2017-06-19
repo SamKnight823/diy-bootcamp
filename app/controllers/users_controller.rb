@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
     if @user.save
       session[:user_id] = @user.id
-      redirect '/drills'
+      erb :"users/show"
     end
   end
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect '/drills'
+      erb :"users/show"
     else
       redirect '/login'
     end

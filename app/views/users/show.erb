@@ -1,7 +1,20 @@
-<p> Way to go, <%= @user.username %>! You've sucessfully logged the following days:</p>
+<h2>Welcome to DIY Bootcamp</h2>
+<p>The goal of DIY Bootcamp is to guide you through 60 days of a simulated Army bootcamp at home. Each day you should attempt to complete at least 20 minutes of cardio activity and record the maximum number of pushups, crunches, squats, and squatjacks that you can complete in 5 minute rounds per exercise. Be sure to log your drills and user information everyday.</p>
+<p>To begin <a href="/stats/new">Log your beginning user information</a></p>
+<p>or</p>
+<a href="/drills/new">Log a new Drill</a>
+
+<p> Way to go, <%= @user.username %>! So far you've sucessfully logged the following drills:</p>
  <% @user.drills.each do |drill| %>
    <ul>
-    <li>Day Number: <a href="/drills/<%=drill.id%>"><%= drill.day %></a></li>
+    <li><a href="/drills/<%=drill.id%>">Drill Number: <%= drill.day %></a></li>
    </ul>
 <% end %>
 <p>Log <%= 60 - @user.drills.size %> more days to complete the challenge!</p>
+
+<p> Here is a log of your daily weight:</p>
+ <% @user.stats.each do |stat| %>
+   <ul>
+    <li><a href="/drills/<%=stat.id%>">Day Number:<%= stat.day %> Weight: <%= stat.weight %>lbs</a></li>
+   </ul>
+<% end %>

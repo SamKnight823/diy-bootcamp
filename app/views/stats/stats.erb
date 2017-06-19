@@ -1,6 +1,8 @@
-<h1>Great job, <%= current_user.username %>! Here are your completed Stats:</h1>
+<h1>Keep up the good work, <%= current_user.username %>! Here is your daily information log:</h1>
  <% current_user.stats.each do |stat| %>
-   <h3>Gender: <%= stat.gender %>-<a href="stats/<%= stat.id%>">View/Edit</a> - <a href="/users/<%= stat.user %>"><%= stat.user.username %></a></h3>
+   <h3><a href="stats/<%= stat.id%>">Day Number: <%= stat.day %></a></h3>
+
+
 <% end %>
 <br><br>
-<a href="/stats/new">Log a new Stat</a>
+<a href="/stats/new">Enter your user information for today</a>

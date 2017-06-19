@@ -1,7 +1,7 @@
-<h2>Gender:<%= @stat.gender %></h2>
-<h3>Age: <%= @stat.age %></h3>
-<h3>Height: <%= @stat.height %></h3>
-<h3>Weight: <%= @stat.weight %></h3>
+<h3>Day Number: <%= @stat.day %></h3>
+<h3>Weight: <%= @stat.weight %> lbs</h3>
+<h3>Calories Consumed: <%= @stat.calories %></h3>
+
 
  <br><br>
  <form action="/stats/<%= @stat.id %>/delete" method="post">

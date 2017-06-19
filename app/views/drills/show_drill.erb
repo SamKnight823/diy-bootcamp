@@ -5,6 +5,9 @@
 <h3>Crunches:<%= @drill.crunches %></h3>
 <h3>Squatjacks:<%= @drill.squatjacks %></h3>
  <br><br>
+
+ <h3>You've burned <%= @drill.cardio*10 + @drill.pushups*0.5 + @drill.squats*0.5 + @drill.crunches*0.5 + @drill.squatjacks*10 %> calories today!</h3><br>
+
  <form action="/drills/<%= @drill.id %>/delete" method="post">
    <input id="hidden" type="hidden" name="_method" value="DELETE">
    <input type="submit" value="Delete Drill">
