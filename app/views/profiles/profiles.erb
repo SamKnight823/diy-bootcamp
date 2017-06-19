@@ -1,0 +1,11 @@
+<h1><%= current_user.username %>'s User Profile:</h1>
+
+<h3>Gender: <%= current_user.profile[:gender] %></h3>
+<h3>Weight: <%= current_user.profile[:weight] %> lbs</h3>
+<h3>Height: <%= current_user.profile[:height] %></h3>
+<h3>Age: <%= current_user.profile[:age] %></h3>
+
+<h3> A male with your current statistics will burn <%= 655.1 + (current_user.profile[:weight].to_i * 9.6 / 2.2 + current_user[:height].to_i* 1.8 / 2.54 - current_user[:age].to_i*4.7).round %> calories at rest.</h3>
+<h3> A female with your current statistics will burn <%= 66.47 + (current_user.profile[:weight].to_i * 13.7 / 2.2 + current_user[:height].to_i* 5 / 2.54 - current_user[:age].to_i*6.8).round %> calories at rest.</h3>
+
+<p>**Add these calculations to your calories burned during drills to compare your total daily calorie burn to daily calorie consumption.</p>
