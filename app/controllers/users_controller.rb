@@ -50,4 +50,13 @@ class UsersController < ApplicationController
     @user=current_user
       erb :'users/show'
   end
+
+  get '/users/profile' do
+    @user=current_user
+      if @user.profile == nil
+        erb :'profiles/create_profile'
+      else
+        erb :"profiles/profiles"
+      end
+  end
 end
