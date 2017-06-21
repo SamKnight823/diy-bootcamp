@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   get '/users/profile' do
     @user=current_user
       if @user.profile == nil
-        erb :'profiles/create_profile'
+        redirect '/profiles/new'
       else
         erb :"profiles/profiles"
       end

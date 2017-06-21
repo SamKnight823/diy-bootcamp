@@ -63,9 +63,9 @@ class ProfilesController < ApplicationController
     @profile = Profile.find_by_id(params[:id])
     if session[:user_id] == @profile.user_id
       @profile.delete
-      redirect '/profiles'
+      redirect '/users/profile'
     else
-      redirect "/profiles"
+      redirect "/users/profile"
     end
   end
 end
