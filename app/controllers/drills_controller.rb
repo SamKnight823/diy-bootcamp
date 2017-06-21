@@ -1,4 +1,6 @@
+require 'rack-flash'
 class DrillsController < ApplicationController
+  use Rack::Flash
 
    get '/drills' do
     if logged_in?
@@ -50,7 +52,8 @@ class DrillsController < ApplicationController
 
   post '/drills' do
      @user = current_user
-    if params[:cardio].empty?
+    if params[:day].empty?
+      flash[:message] = "Please enter Day Number"
       redirect '/drills/new'
     else
       @drill = @user.drills.build(params)

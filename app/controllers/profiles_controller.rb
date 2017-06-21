@@ -1,4 +1,6 @@
+require 'rack-flash'
 class ProfilesController < ApplicationController
+  use Rack::Flash
 
    get '/profiles' do
     if logged_in?
@@ -50,7 +52,8 @@ class ProfilesController < ApplicationController
 
   post '/profiles' do
      @user = current_user
-    if params[:gender].empty?
+    if params[:gender] == "" || params[:weight] == "" || params[:height] == "" || params[:age] == ""
+      flash[:message] = "Please complete all fields"
       redirect '/profiles/new'
     else
       @profile = @user.build_profile(params)

@@ -1,4 +1,6 @@
+require 'rack-flash'
 class StatsController < ApplicationController
+  use Rack::Flash
 
    get '/stats' do
     if logged_in?
@@ -51,6 +53,7 @@ class StatsController < ApplicationController
   post '/stats' do
      @user = current_user
     if params[:day].empty?
+      flash[:message] = "Please enter a Day Number"
       redirect '/stats/new'
     else
       @stat = @user.stats.build(params)
